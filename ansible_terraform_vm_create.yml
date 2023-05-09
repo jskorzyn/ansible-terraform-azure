@@ -17,14 +17,6 @@
         repo: "https://github.com/jskorzyn/terraform-azure.git"
         dest: /tmp/git
 
-    - name: check folder structure
-      shell: ls -al /tmp/git
-      register: folders
-
-    - name: debug folders
-      debug:
-        var: folders.stdout
-
     - name: Initialize Terraform Provider
       cloud.terraform.terraform:
         project_path: /tmp/git
@@ -35,3 +27,11 @@
       cloud.terraform.terraform:
         project_path: /tmp/git
         state: present
+
+    - name: check folder structure
+      shell: ls -al /tmp/git
+      register: folders
+
+    - name: debug folders
+      debug:
+        var: folders.stdout
