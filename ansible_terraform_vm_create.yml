@@ -20,11 +20,11 @@
         repo: "https://github.com/jskorzyn/terraform-azure.git"
         dest: /tmp/git
 
-    - name: Initialize Terraform Provider
-      cloud.terraform.terraform:
-        project_path: /tmp/git
-        state: absent
-        force_init: true
+    # - name: Initialize Terraform Provider
+    #   cloud.terraform.terraform:
+    #     project_path: /tmp/git
+    #     state: absent
+    #     force_init: true
 
     - name: Deploy Azure Instance with Terraform Provider
       cloud.terraform.terraform:
