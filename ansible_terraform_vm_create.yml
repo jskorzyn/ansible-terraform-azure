@@ -6,13 +6,19 @@
 
   tasks:
 
+    - name: Create Terraform project 
+      ansible.builtin.file:
+        path: /tmp/git
+        state: directory
+        mode: '755'     
+
     - name: Clone terraform azure repo
       ansible.builtin.git:
         repo: "https://github.com/jskorzyn/terraform-azure.git"
-        dest: /tmp
+        dest: /tmp/git
 
     - name: start tf file
       cloud.terraform.terraform:
-        project_path: /tmp/terraform-azure
+        project_path: /tmp/git/terraform-azure
         state: present
         force_init: true
