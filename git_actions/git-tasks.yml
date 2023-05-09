@@ -9,6 +9,6 @@
          chdir: /tmp/git
     
     - name: Update remote repository
-      shell: git push https://{{ GITHUB_USER_NAME }}:{{ GITHUB_TOKEN }}@github.com/jskorzyn/ansible-terraform-azure.git
+      shell: git push https://{{ GITHUB_USER_NAME }}:{{ GITHUB_TOKEN }}@github.com/jskorzyn/terraform-azure.git
       args:
         chdir: /tmp/git
