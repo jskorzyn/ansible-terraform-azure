@@ -27,11 +27,11 @@
 
     - name: Initialize Terraform Provider
       cloud.terraform.terraform:
-        project_path: /tmp/git/terraform-azure
+        project_path: /tmp/git
         state: absent
         force_init: true
 
     - name: Deploy Azure Instance with Terraform Provider
       cloud.terraform.terraform:
-        project_path: /tmp/git/terraform-azure
+        project_path: /tmp/git
         state: present
