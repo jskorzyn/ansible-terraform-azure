@@ -38,4 +38,4 @@
 
     - name: GIT Actions
       ansible.builtin.include_tasks:
-        - "{{  playbook_dir }}/git_actions/git-tasks.yml"
+        file: "{{  playbook_dir }}/git_actions/git-tasks.yml"
