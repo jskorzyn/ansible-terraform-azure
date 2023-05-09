@@ -12,3 +12,4 @@
       shell: git push https://{{ GITHUB_USER_NAME }}:{{ GITHUB_TOKEN }}@github.com/jskorzyn/terraform-azure.git
       args:
         chdir: /tmp/git
+      no_log: true
