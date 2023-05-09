@@ -4,6 +4,9 @@
   connection: local
   gather_facts: false
 
+  vars_files:
+    - "{{  playbook_dir }}/vars/vault-vars.yml"
+
   tasks:
 
     - name: Create Terraform project 
