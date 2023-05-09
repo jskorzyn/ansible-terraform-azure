@@ -1,0 +1,14 @@
+---
+    - name: Configure Git details
+      shell: git config --global user.name "jskorzyn" && git config --global user.email "jskorzyn@redhat.com"
+
+    - name: Update Terraform build repo
+      ignore_errors: true 
+      shell: git add . && git commit -m "Adding Terraform Build"
+      args:
+         chdir: /tmp/git
+    
+    - name: Update remote repository
+      shell: git push git push https://{{ GITHUB_USER_NAME }}:{{ GITHUB_TOKEN }}@github.com/jskorzyn/ansible-terraform-azure.git
+      args:
+        chdir: /tmp/git
