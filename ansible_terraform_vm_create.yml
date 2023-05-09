@@ -20,11 +20,17 @@
         repo: "https://github.com/jskorzyn/terraform-azure.git"
         dest: /tmp/git
 
-    - name: Initialize Terraform Provider
-      cloud.terraform.terraform:
-        project_path: /tmp/git
-        state: absent
-        force_init: true
+    - name: Chceck Terraform state file exists
+      ansible.builtin.stat:
+        path: "/tmp/git/terraform.tfstate"
+      register: terraform_state
+
+    # - name: Initialize Terraform Provider
+    #   cloud.terraform.terraform:
+    #     project_path: /tmp/git
+    #     state: absent
+    #     force_init: true
+    #   when: not terraform_state.stat.exists
 
     - name: Deploy Azure Instance with Terraform Provider
       cloud.terraform.terraform:
