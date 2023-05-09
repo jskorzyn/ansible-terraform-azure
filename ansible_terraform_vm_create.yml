@@ -29,7 +29,7 @@
     - name: Deploy Azure Instance with Terraform Provider
       cloud.terraform.terraform:
         project_path: /tmp/git
-        state: "{{ infra_state | default(present) }}"
+        state: "{{ infra_state | default('present') }}"
 
     - name: GIT Actions
       ansible.builtin.include_tasks:
