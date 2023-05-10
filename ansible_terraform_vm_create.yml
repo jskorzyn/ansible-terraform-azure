@@ -25,6 +25,7 @@
         project_path: /tmp/git
         state: "{{ infra_state | default('present') }}"
         force_init: true
+      verbosity: 1
 
     - name: GIT Actions
       ansible.builtin.include_tasks:
